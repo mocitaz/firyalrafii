@@ -6,16 +6,19 @@ import { Terminal } from "lucide-react";
 export function Skills() {
     const categories = [
         {
-            title: "Data Analytics",
-            skills: ["Microsoft Excel", "VLOOKUP/XLOOKUP", "Pivot Tables", "Data Cleaning", "Data Query"]
+            title: "Data.Analytics",
+            skills: ["Microsoft Excel", "VLOOKUP / XLOOKUP", "Pivot Tables", "Data Cleaning", "Data Query", "Reporting"],
+            hex: "0xDA"
         },
         {
-            title: "Development",
-            skills: ["HTML", "CSS", "MySQL", "PHP", "TypeScript", "React", "Next.js"]
+            title: "Development.Stack",
+            skills: ["HTML5", "CSS3 / Tailwind", "MySQL", "PHP", "TypeScript", "React", "Next.js"],
+            hex: "0xDEV"
         },
         {
-            title: "Soft Skills",
-            skills: ["Communication", "Problem Solving", "Adaptability", "Collaboration", "Testing", "UAT"]
+            title: "Sys.Operations",
+            skills: ["IT Support", "Hardware Troubleshooting", "Functional Testing", "UAT", "Cross-Functional Collaboration"],
+            hex: "0xSYS"
         }
     ];
 
@@ -32,9 +35,9 @@ export function Skills() {
                 >
                     <div className="flex items-center gap-3 text-foreground font-mono text-xs tracking-[0.2em] uppercase font-bold">
                         <Terminal className="w-4 h-4" />
-                        <span>04. Toolkit</span>
+                        <span>04. System Dependencies</span>
                     </div>
-                    <h2 className="text-4xl md:text-6xl font-heading font-extrabold uppercase tracking-tight">Core Capabilities</h2>
+                    <h2 className="text-4xl md:text-6xl font-heading font-extrabold uppercase tracking-tight">Technical Stack</h2>
                 </motion.div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -45,19 +48,25 @@ export function Skills() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true, margin: "-100px" }}
                             transition={{ duration: 0.6, delay: index * 0.2 }}
-                            className="flex flex-col border border-border bg-card p-10 hover:shadow-[-8px_8px_0_0_rgba(255,255,255,0.1)] transition-all duration-300 dark:hover:shadow-[-8px_8px_0_0_rgba(100,100,100,0.5)]"
+                            className="flex flex-col border border-border bg-card hover:bg-foreground hover:text-background transition-colors duration-500 shadow-[10px_10px_0_0_rgba(100,100,100,0.1)] group"
                         >
-                            <h3 className="text-2xl font-bold font-heading uppercase tracking-widest mb-8 text-foreground pb-4 border-b border-border">
-                                {category.title}
-                            </h3>
-                            <div className="flex flex-col gap-4">
+                            <div className="p-4 border-b border-border bg-muted flex items-center justify-between group-hover:bg-foreground group-hover:border-background/20 transition-colors">
+                                <span className="font-mono text-xs uppercase font-bold tracking-widest text-foreground group-hover:text-background">
+                                    {category.title}
+                                </span>
+                                <span className="font-mono text-xs text-muted-foreground group-hover:text-background/50">
+                                    [ {category.hex} ]
+                                </span>
+                            </div>
+
+                            <div className="p-8 flex flex-col gap-4">
                                 {category.skills.map((skill, i) => (
                                     <div
                                         key={i}
-                                        className="group flex items-center gap-4 text-muted-foreground hover:text-foreground transition-colors cursor-default"
+                                        className="flex items-center justify-between font-mono text-sm uppercase tracking-widest font-semibold border-b border-border/30 pb-2 last:border-0 last:pb-0 group-hover:border-background/20 text-muted-foreground group-hover:text-background/90"
                                     >
-                                        <div className="w-0 h-px bg-foreground transition-all duration-300 group-hover:w-6"></div>
-                                        <span className="font-mono text-sm uppercase tracking-widest font-semibold">{skill}</span>
+                                        <span>{skill}</span>
+                                        <span className="text-[10px] opacity-30 group-hover:opacity-100 transition-opacity">OK</span>
                                     </div>
                                 ))}
                             </div>

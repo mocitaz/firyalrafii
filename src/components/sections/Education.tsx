@@ -10,7 +10,7 @@ export function Education() {
             degree: "Bachelor of Informatics",
             institution: "Telkom University",
             location: "Bandung, Indonesia",
-            period: "2019 – 2023",
+            period: "2021 – 2025",
             details: [
                 "Focused on Data Analytics, Information Systems, and Software Engineering methodologies.",
                 "Completed major capstone project in database optimization.",

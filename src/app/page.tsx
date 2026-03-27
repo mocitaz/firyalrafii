@@ -1,6 +1,7 @@
 import { CustomCursor } from "@/components/CustomCursor";
 import { OpeningAnimation } from "@/components/OpeningAnimation";
 import { Navbar } from "@/components/Navbar";
+import { SystemHUD } from "@/components/SystemHUD";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Experience } from "@/components/sections/Experience";
@@ -12,10 +13,11 @@ import { Footer } from "@/components/sections/Footer";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen selection:bg-neon-cyan/30 selection:text-neon-cyan overflow-hidden bg-background">
+    <main className="relative min-h-screen overflow-hidden bg-background">
       {/* Global Components */}
       <CustomCursor />
       <OpeningAnimation />
+      <SystemHUD />
       <Navbar />
 
       {/* Pages Layout */}
